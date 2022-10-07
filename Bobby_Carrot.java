@@ -5,6 +5,8 @@ public class Bobby_Carrot {
 
     public static void main(String[] args) {
 
+        rules();
+
         final int HEIGHT = 10;
         final int WIDTH = 10;
         final int nCARROT = 10;
@@ -18,6 +20,7 @@ public class Bobby_Carrot {
                 field[i][j] = '_';
             }
         }
+        field[0][0] = '~';
 
         // generate carrots
         Random r = new Random();
@@ -33,6 +36,26 @@ public class Bobby_Carrot {
 
         printField(WIDTH, HEIGHT, field);
 
+
+        boolean gameIsGoing = true;
+        int score = 0;
+        Scanner sc = new Scanner(System.in);
+        while (gameIsGoing) {
+            System.out.println("Score: " + score);
+//            char action = sc.next();
+
+            /*
+             * считываем ход
+             * проверяем на морковку и на возможность перехода в клетку
+             *
+             * нельзя: повтор
+             * морковка: +1, заменяем на "Х" и передвигаемся на клетку
+             * пустой: заменяем на "Х" и передвигаемся
+             *
+             * */
+        }
+
+
     }
 
     public static void printField(int w, int h, char[][] f) {
@@ -42,6 +65,10 @@ public class Bobby_Carrot {
             }
             System.out.println();
         }
+    }
+
+    public static void rules() {
+        System.out.println("\nWelcome to Bobby Carrot!\nRules:\n Press W for up\n Press D for right\n Press S for down\n Press A for left\n");
     }
 
 }
